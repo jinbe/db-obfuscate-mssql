@@ -57,7 +57,7 @@ async function createTemp(records): Promise<void> {
         server: config.db.server,
         port: config.db.port,
         database: config.db.database,
-        timeout: 2000000,
+        timeout: 500000,
       },
       (err) => {
         if (err) {
@@ -118,6 +118,7 @@ async function updateRecords(record): Promise<void> {
         server: config.db.server,
         port: config.db.port,
         database: config.db.database,
+        timeout: 500000,
       },
       (err) => {
         if (err) {

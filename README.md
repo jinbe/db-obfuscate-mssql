@@ -12,7 +12,7 @@ Create `config.ts`
 
 Example:
 `
-const moment = require('moment');
+import { format, parse } from 'date-fns';
 
 const config = {
 importFile: 'fakenames.csv',
@@ -45,7 +45,7 @@ transform: {
 GivenName: (s) => s,
 Surname: (s) => s,
 StreetAddress: (s) => s,
-Birthday: (s) => moment(s, 'MM/DD/YYYY').format('YYYY-MM-DD'),
+Birthday: (s) => format(parse(s, 'LL/dd/yyyy', new Date()), yyyy-LL-dd),
 State: (s) => s,
 City: (s) => s,
 ZipCode: (s) => s,
